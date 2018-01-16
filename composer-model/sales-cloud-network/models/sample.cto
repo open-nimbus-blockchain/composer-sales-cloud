@@ -3,20 +3,14 @@
  */
 namespace org.acme.sample
 
-asset SampleAsset identified by assetId {
-  o String assetId
-  --> Contact owner
-  o String value
-}
-
-participant Contact identified by participantId {
-  o String participantId
+participant Contact identified by ContactId {
+  o String ContactId
   o String firstName
   o String lastName
 }
 
-participant Account identified by participantId {
-  o String participantId
+participant Account identified by AccountId {
+  o String AccountId
   o String firstName
   o String lastName
 }
@@ -33,10 +27,10 @@ event SampleEvent {
 }
 
 /**
- * Defines a contract
+ * Defines an Opportunity
  */
-asset Contract identified by contractId {
-  o String contractId
+asset Opportunity identified by OpportunityId {
+  o String OpportunityId
   --> Contact contact
   --> Account account
   o DateTime arrivalDateTime
@@ -45,4 +39,25 @@ asset Contract identified by contractId {
   o Double maxTemperature
   o Double minPenaltyFactor
   o Double maxPenaltyFactor
+}
+
+/**
+ * Defines a contract
+ */
+asset Contract identified by ContractId {
+  o String ContractId
+  --> Contact contact
+  --> Account account
+  o DateTime arrivalDateTime
+  o Double unitPrice
+  o Double minTemperature
+  o Double maxTemperature
+  o Double minPenaltyFactor
+  o Double maxPenaltyFactor
+}
+
+asset SampleAsset identified by assetId {
+  o String assetId
+  --> Contact owner
+  o String value
 }
