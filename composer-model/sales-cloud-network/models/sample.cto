@@ -31,3 +31,18 @@ event SampleEvent {
   o String oldValue
   o String newValue
 }
+
+/**
+ * Defines a contract
+ */
+asset Contract identified by contractId {
+  o String contractId
+  --> Contact contact
+  --> Account account
+  o DateTime arrivalDateTime
+  o Double unitPrice
+  o Double minTemperature
+  o Double maxTemperature
+  o Double minPenaltyFactor
+  o Double maxPenaltyFactor
+}
