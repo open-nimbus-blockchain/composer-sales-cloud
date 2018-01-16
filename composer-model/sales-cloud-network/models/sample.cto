@@ -5,11 +5,17 @@ namespace org.acme.sample
 
 asset SampleAsset identified by assetId {
   o String assetId
-  --> SampleParticipant owner
+  --> Contact owner
   o String value
 }
 
-participant SampleParticipant identified by participantId {
+participant Contact identified by participantId {
+  o String participantId
+  o String firstName
+  o String lastName
+}
+
+participant Account identified by participantId {
   o String participantId
   o String firstName
   o String lastName
